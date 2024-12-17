@@ -118,4 +118,11 @@ interface AutoUpgradeProfiles {
   >;
 
   listByParent is ArmResourceListByParent<AutoUpgradeProfile>;
+
+  @doc("Generate Update Runs.")
+  generate is ArmResourceNoRequestBodyActionAsync<
+    AutoUpgradeProfile,
+    UpdateRun,
+    BaseParameters<AutoUpgradeProfile> & IfMatchParameters<AutoUpgradeProfile>
+  >;
 }
